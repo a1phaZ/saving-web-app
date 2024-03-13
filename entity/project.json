@@ -1,0 +1,21 @@
+{
+  "name": "entity",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "entity/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/esbuild:esbuild",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/entity",
+        "main": "entity/src/index.ts",
+        "tsConfig": "entity/tsconfig.lib.json",
+        "assets": ["entity/*.md"],
+        "generatePackageJson": true,
+        "format": ["cjs"]
+      }
+    }
+  },
+  "tags": []
+}

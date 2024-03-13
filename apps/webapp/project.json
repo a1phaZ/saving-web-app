@@ -18,7 +18,10 @@
         "inlineStyleLanguage": "scss",
         "assets": ["apps/webapp/src/favicon.ico", "apps/webapp/src/assets"],
         "styles": ["apps/webapp/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "stylePreprocessorOptions": {
+          "includePaths": ["ui/src"]
+        }
       },
       "configurations": {
         "production": {
@@ -49,6 +52,14 @@
     },
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
+      "options": {
+        "browserTarget": "webapp:build",
+        "host": "tg-fin-bot.localhost",
+        "ssl": true,
+        "sslKey": "./certs/local-key.pem",
+        "sslCert": "./certs/local-cert.pem",
+        "proxyConfig": "apps/webapp/proxy.conf.json"
+      },
       "configurations": {
         "production": {
           "buildTarget": "webapp:build:production"

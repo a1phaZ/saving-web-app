@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+// @import url('./variables.scss');
+// @import '@ui/src';
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    color: var(--tg-theme-text-color);
+}
