@@ -1,0 +1,63 @@
+.button__wrapper {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  .action__button {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 0;
+    background: transparent;
+    color: var(--tg-theme-accent-text-color);
+
+    border-radius: 8px;
+
+    border: none;
+    outline: none;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    -moz-user-select: none;
+    user-select: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    &.disable {
+      color: var(--tg-theme-subtitle-text-color);
+      cursor: not-allowed;
+    }
+
+    &-wrapper {
+      gap: 2px;
+      flex-direction: column;
+      padding: 7px 4px 8px;
+      align-items: center;
+      border-radius: inherit;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+    }
+
+    &-icon {
+      height: 32px;
+      width: 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    &-title {
+      max-width: 100%;
+      min-width: 0;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      font-weight: 500;
+      --skeleton-height: 10px;
+      font-size: 14px;
+      line-height: 16px;
+
+      white-space: normal;
+    }
+  }
+}

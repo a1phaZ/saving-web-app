@@ -1,0 +1,48 @@
+.select__field-container {
+  background: var(--tg-theme-section-bg-color);
+  padding: 20px 0 4px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  font-weight: 500;
+  --skeleton-height: 12px;
+  font-size: 15px;
+  line-height: 18px;
+  font-family: Roboto, system-ui, sans-serif;
+
+}
+.input__label {
+  color: var(--tg-theme-section-header-text-color);
+
+  &::after {
+    background: var(--separator-color);
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+  }
+}
+
+.input__error {
+  .input__field {
+    color: var(--tg-theme-destructive-text-color);
+  }
+  .input__label {
+    &::after {
+      background: var(--tg-theme-destructive-text-color);
+      transition: none;
+      opacity: 1;
+    }
+  }
+}
+
+.modal {
+  background: #4ecc5e;
+  min-height: 100vh;
+  min-width: 100vw;
+}

@@ -1,0 +1,136 @@
+.switch__field-container {
+  display: flex;
+  align-items: center;
+  background: var(--tg-theme-section-bg-color);
+
+  .switch__field {
+    --cell-separator-height: 1px;
+    margin-inline-start: 20px;
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    max-width: 100%;
+    min-width: 0;
+    position: relative;
+
+    &::before {
+      background: var(--separator-color);
+      content: '';
+      height: var(--cell-block-separator-height);
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform-origin: top left;
+      width: 100%;
+    }
+
+    &::after {
+      background: var(--separator-color);
+      bottom: 0;
+      content: '';
+      height: var(--cell-separator-height);
+      left: 0;
+      position: absolute;
+      transform-origin: bottom left;
+      width: 100%;
+    }
+
+    .label__container {
+      align-items: flex-start;
+      gap: 2px;
+      min-height: 50px;
+      padding-block: 12px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: center;
+      margin-inline: var(--cell-text-inline-spacing);
+      max-width: 100%;
+      min-width: 0;
+
+      .label {
+        overflow: visible;
+        white-space: pre-line;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        font-weight: 400;
+        --skeleton-height: 12px;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    .buttons__container {
+      --cell-avatar-inline-spacing: 11px 14px;
+      --cell-text-inline-spacing: 11px 20px;
+      --cell-radio-inline-spacing: 20px;
+      --cell-checkbox-inline-spacing: 28px 25px;
+      --cell-icon-inline-spacing: 16px 20px;
+      --cell-picker-inline-spacing: 16px 20px;
+      --cell-tabs-inline-spacing: 0;
+      flex-shrink: 0;
+      color: var(--tg-theme-text-color);
+
+      .wrapper {
+        margin-inline: var(--cell-tabs-inline-spacing);
+
+        &__buttons {
+          display: flex;
+          position: relative;
+          height: 50px;
+          width: 100%;
+
+          .action__button {
+            height: 100%;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+            display: flex;
+            position: relative;
+
+            &-title {
+              align-items: center;
+              color: var(--tg-theme-subtitle-text-color);
+              display: flex;
+              font-family: Roboto, system-ui, sans-serif;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 20px;
+              transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+              height: 100%;
+              padding: 0 16px;
+
+              &.active {
+                color: var(--tg-theme-accent-text-color);
+                position: relative;
+
+                &::after {
+                  content: '';
+                  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                  background-color: var(--tg-theme-accent-text-color);
+                  border-radius: 2px 2px 0 0;
+                  bottom: 0;
+                  height: 3px;
+                  left: 0;
+                  position: absolute;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}

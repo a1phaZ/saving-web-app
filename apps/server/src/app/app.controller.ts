@@ -14,7 +14,6 @@ export class AppController {
   @Post('validate')
   @UseGuards(new ValidateGuard())
   validateInitData(@Req() req) {
-    console.log(req.body);
     return { data: true };
   }
 }

@@ -1,0 +1,14 @@
+.horizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  background-color: var(--tg-theme-section-bg-color);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  //   margin-bottom: 12px;
+
+  padding-inline: 16px;
+  padding-block: 8px;
+
+  width: 100%;
+}

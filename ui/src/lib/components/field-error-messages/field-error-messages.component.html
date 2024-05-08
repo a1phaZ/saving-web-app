@@ -1,0 +1,5 @@
+<div class="errors__wrapper">
+  @for (error of errors|keyvalue; track error.key) {
+    <div class="error_message">{{error | fieldError}}</div>
+  }
+</div>

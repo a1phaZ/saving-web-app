@@ -1,0 +1,15 @@
+<div class="container" [ngStyle]="{ 'font-size': size + 'px' }">
+  <div class="value" *ngIf="value | tgFinAppCurrency : 'RUB' as formattedValue">
+    @if(formattedValue.currencyPosition === 0) {
+    <span class="currency">{{ formattedValue.currencySymbol }}</span>
+    <span>&nbsp;</span>
+    }
+    <span>{{ formattedValue.number }}</span>
+    <span class="divider">{{ formattedValue.divider }}</span>
+    <span class="fraction">{{ formattedValue.decimal }}</span>
+    @if(formattedValue.currencyPosition !== 0) {
+    <span>&nbsp;</span>
+    <span class="currency">{{ formattedValue.currencySymbol }}</span>
+    }
+  </div>
+</div>

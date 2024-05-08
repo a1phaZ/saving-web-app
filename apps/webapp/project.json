@@ -2,7 +2,7 @@
   "name": "webapp",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "tg-fin-app",
+  "prefix": "webapp",
   "sourceRoot": "apps/webapp/src",
   "tags": [],
   "targets": {
@@ -53,7 +53,7 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "options": {
-        "browserTarget": "webapp:build",
+        "buildTarget": "webapp:build",
         "host": "tg-fin-bot.localhost",
         "ssl": true,
         "sslKey": "./certs/local-key.pem",

@@ -1,0 +1,8 @@
+@if (header()) {
+  <div class="header__container">
+    <div class="header">{{ header() }}</div>
+    @if(subHeader()) {
+      <div class="subheader">{{ subHeader() }}</div>
+    }
+  </div>
+}

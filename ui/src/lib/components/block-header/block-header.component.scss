@@ -1,0 +1,15 @@
+.container {
+  padding: 12px 0 4px;
+  background: var(--tg-theme-section-bg-color);
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  font-weight: 500;
+  --skeleton-height: 12px;
+  font-size: 15px;
+  line-height: 18px;
+  color: var(--tg-theme-section-header-text-color);
+  width: 100%;
+  position: relative;
+}

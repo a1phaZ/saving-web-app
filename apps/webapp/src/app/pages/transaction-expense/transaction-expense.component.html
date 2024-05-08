@@ -1,0 +1,35 @@
+<ui-page-container>
+  <ui-balance
+    [title]="title"
+    [value]="form.get('amount')?.value || 0"
+  ></ui-balance>
+  <!--  <ui-page-header header="Новая операция"></ui-page-header>-->
+  <div class="form" [formGroup]="form">
+    <ui-select-field
+      formControlName="source"
+      [options]="{label: 'Счет списания'}"
+      [item]="sourceItem"
+      [items]="sourceList"
+      [exclude]="[targetItem.id, sourceItem.id]"
+    ></ui-select-field>
+
+    <ui-input-field
+      formControlName="amount"
+      [options]="{
+        placeholder: '0',
+        label: 'Сумма операции',
+        suffix: 'р.',
+        type:'number'
+      }"
+    ></ui-input-field>
+
+    <ui-input-field
+      formControlName="description"
+      [options]="{
+        placeholder: 'Описание операции',
+        label: 'Описание операции',
+        type:'text'
+      }"
+    ></ui-input-field>
+  </div>
+</ui-page-container>

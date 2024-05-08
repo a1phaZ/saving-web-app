@@ -1,0 +1,49 @@
+@if (item) {
+<div class="wrapper" [ngClass]="{ last: last }" (click)="itemClick.emit(item)">
+  <div
+    class="wrapper__inner"
+    [ngClass]="{
+      action__item: item.type === 'action',
+      wallet__item: item.type === 'wallet'
+    }"
+  >
+    @if (item.icon) {
+    <div class="avatar__container">
+      <div class="avatar">
+        <ui-icon [icon]="item.icon.name" [size]="item.icon.size"></ui-icon>
+        <!-- <svg width="46" height="46" fill="none" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" rx="20" fill="#0098EA"></rect><path d="M26.831 11H13.173c-2.512 0-4.103 2.709-2.84 4.899l8.43 14.61a1.43 1.43 0 0 0 2.478 0l8.431-14.61c1.262-2.187-.33-4.899-2.84-4.899h-.001zm-8.075 15.128-1.836-3.553-4.43-7.922a.774.774 0 0 1 .68-1.157h5.584V26.13l.002-.002zm8.754-11.477-4.428 7.926-1.836 3.551V13.494h5.583c.612 0 .973.65.68 1.157z" fill="#fff"></path></svg> -->
+      </div>
+    </div>
+    }
+
+    <div class="content__container">
+      <div class="content__container-primary">
+        <div class="content__title">{{ item.title }}</div>
+        @if (item.subtitle) {
+        <div class="content__subtitle">{{ item.subtitle }}</div>
+
+        }
+      </div>
+      @if(item.additional) {
+      <div class="content__container-secondary">
+        <div class="content__wrapper">
+          @if(item.type !== 'wallet') {
+          <div class="content__body">
+            {{ item.additional }}
+          </div>
+          } @else {
+          <ui-currency [value]="item.additional" [size]="18"></ui-currency>
+          }
+        </div>
+      </div>
+      }
+    </div>
+    @if (withArrow) {
+
+    <div class="arrow__container">
+      <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" fill="none" viewBox="0 0 7 12" class="p_ZQ v61B"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 5 5-5 5"></path></svg>
+    </div>
+    }
+  </div>
+</div>
+}

@@ -1,2 +1,21 @@
-<p>history works!</p>
-<button type="button" (click)="sendData()">send data</button>
+<ui-page-container>
+  <ng-template
+    [tgFinAppDynamicComponent]="component"
+    [inputs]="{}"
+    [outputs]="{}"
+  >
+  </ng-template>
+
+  <ui-content-block>
+    <ui-horizontal-container>
+      <ui-block-header title="Мои кошельки" (click)="test()"></ui-block-header>
+    </ui-horizontal-container>
+    @for (item of items; track $index; let last=$last) {
+    <ui-list-item
+      [item]="item"
+      [last]="last"
+      (itemClick)="itemClick($event)"
+    ></ui-list-item>
+    }
+  </ui-content-block>
+</ui-page-container>

@@ -1,0 +1,10 @@
+<div class="button__wrapper"  (click)="button.disabled ? null : buttonClick.emit({path: button.action.path, data: button.action.data})">
+  <button class="action__button" [ngClass]="{disable: button.disabled}">
+    <div class="action__button-wrapper">
+      <span class="action__button-icon">
+        <ui-icon [icon]="button.icon" [size]="button.size"></ui-icon>
+      </span>
+      <div class="action__button-title">{{ button.title }}</div>
+    </div>
+  </button>
+</div>

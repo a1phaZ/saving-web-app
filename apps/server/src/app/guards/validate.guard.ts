@@ -13,7 +13,14 @@ export class ValidateGuard implements CanActivate {
 
     const _initData = request.headers[process.env.X_HEADER];
 
-    return this.validateInitData(_initData);
+    console.log('init data: ', _initData);
+
+    if (this.validateInitData(_initData)) {
+      request['user'] = this.getUserObject(_initData);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   private validateInitData(initData) {
@@ -26,12 +33,7 @@ export class ValidateGuard implements CanActivate {
     ).digest();
     const hash = this.HMAC_SHA256(secret_key, data_check_string).digest('hex');
 
-    if (hash === data.get('hash')) {
-      // validated!
-      return true;
-    }
-
-    return false;
+    return hash === data.get('hash');
   }
 
   private HMAC_SHA256(key: string | Buffer, secret: string) {
@@ -48,5 +50,20 @@ export class ValidateGuard implements CanActivate {
       .sort(([a], [b]) => a.localeCompare(b)) // sort keys
       .map(([k, v]) => `${k}=${v}`) // combine key-value pairs
       .join('\n');
+  }
+
+  private getUserObject(initData) {
+    const data = new URLSearchParams(initData);
+    let result = {};
+    const items: [k: string, v: string][] = [];
+
+    // remove hash
+    for (const [k, v] of data.entries()) if (k !== 'hash') items.push([k, v]);
+    items.forEach(([k, v]) => {
+      if (k === 'user') {
+        result = JSON.parse(v);
+      }
+    });
+    return result;
   }
 }

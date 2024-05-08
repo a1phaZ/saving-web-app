@@ -1,0 +1,18 @@
+.container {
+  font-size: 44px;
+  .value {
+    line-height: 1.27em;
+    span {
+      font-size: 1em;
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .divider,
+    .fraction,
+    .currency {
+      font-size: 0.73em;
+      color: var(--tg-theme-subtitle-text-color);
+    }
+  }
+}

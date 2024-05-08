@@ -1,0 +1,36 @@
+<ui-page-container>
+  <div class="content__block">
+    <ui-balance
+      title="Баланс на вчера"
+      [value]="(total$ | async) || 0"
+    ></ui-balance>
+
+    <div>
+      @if (actionButtons$ | async; as buttons) {
+
+      <ui-horizontal-container>
+        @for (button of buttons; track $index) {
+        <ui-action-button
+          [ngStyle]="{ width: 100 / buttons.length + '%' }"
+          [button]="button"
+          (buttonClick)="actionButtonClick($event)"
+        ></ui-action-button>
+        }
+      </ui-horizontal-container>
+      }
+    </div>
+  </div>
+
+  <ui-content-block>
+    <ui-horizontal-container>
+      <ui-block-header title="Мои кошельки" (click)="test()"></ui-block-header>
+    </ui-horizontal-container>
+    @for (item of walletsList$ | async; track $index; let last=$last) {
+    <ui-list-item
+      [item]="item"
+      [last]="last"
+      (itemClick)="itemClick($event)"
+    ></ui-list-item>
+    }
+  </ui-content-block>
+</ui-page-container>
