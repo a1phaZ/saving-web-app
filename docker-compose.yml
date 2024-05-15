@@ -5,9 +5,11 @@ services:
     container_name: mongo
     restart: always
     ports:
-      - "27017:27017"
+      - "27117:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin
     volumes:
       - ./mongo-data:/data/db
+      - ./mongod.conf:/etc/mongod.conf
+    entrypoint: ["mongod", "--auth", "--config", "/etc/mongod.conf"]
