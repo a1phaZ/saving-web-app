@@ -32,7 +32,7 @@ export class TransactionModel implements Partial<ITransaction> {
   @Prop({
     required: true,
   })
-  Owner: string;
+  Owner: number;
 
   @Prop()
   Description: string;

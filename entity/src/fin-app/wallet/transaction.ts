@@ -11,7 +11,7 @@ export interface ITransaction {
   Source: string;
   Target: string;
   Amount: number;
-  Owner: string;
+  Owner: number;
   Description: string;
   Timestamp: number;
 }
@@ -59,11 +59,11 @@ export class Transaction implements ITransaction {
   public set Amount(value: number) {
     this._amount = value;
   }
-  private _owner!: string;
-  public get Owner(): string {
+  private _owner!: number;
+  public get Owner(): number {
     return this._owner;
   }
-  public set Owner(value: string) {
+  public set Owner(value: number) {
     this._owner = value;
   }
   private _description!: string;
