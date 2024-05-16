@@ -1,0 +1,21 @@
+.wrapper {
+  background-color: var(--tg-theme-section-bg-color);
+  padding: 40px 16px 12px;
+
+  .body {
+    color: var(--tg-theme-subtitle-text-color);
+    margin-bottom: 1px;
+    text-align: center;
+    --skeleton-height: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .balance__amount {
+    max-width: 100%;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+  }
+}

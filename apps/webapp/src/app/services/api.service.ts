@@ -1,6 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable, InjectionToken, inject } from '@angular/core';
-import { catchError, of } from 'rxjs';
+import { inject, Injectable, InjectionToken } from '@angular/core';
 import { TelegramService } from './telegram.service';
 
 export const BASE_URL = new InjectionToken<string>('Base Server Url', {
@@ -15,19 +14,28 @@ export class ApiService {
   private _baseUrl = inject(BASE_URL);
   private _telegram = inject(TelegramService);
 
-  public post(path: string, data: object) {
+  public get<T>(path: string, params: any) {
     const _headers: HttpHeaders = new HttpHeaders({
       'x-init-data': this._telegram.SafeInitData,
     });
-    return this._http
-      .post(this._baseUrl + path, data, {
-        headers: _headers,
-      })
-      .pipe(
-        catchError((err) => {
-          console.log(err);
-          return of(err);
-        })
-      );
+    console.log(params);
+    return this._http.get<T>(this._baseUrl + path, {
+      headers: _headers,
+    });
+  }
+
+  public post<T>(path: string, data: object) {
+    const _headers: HttpHeaders = new HttpHeaders({
+      'x-init-data': this._telegram.SafeInitData,
+    });
+    return this._http.post<T>(this._baseUrl + path, data, {
+      headers: _headers,
+    });
+    // .pipe(
+    //   catchError((err) => {
+    //     console.log(err);
+    //     return of(EMPTY);
+    //   })
+    // );
   }
 }

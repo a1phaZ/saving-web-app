@@ -1,0 +1,33 @@
+<div class="switch__field-container">
+  <div class="switch__field">
+    <div class="label__container">
+      <div class="label">{{ options.label }}</div>
+    </div>
+    <div class="buttons__container">
+      <div class="wrapper">
+        <div class="wrapper__buttons">
+          <button
+            type="button"
+            class="action__button"
+            (click)="onChange(false)"
+          >
+            <div
+              class="action__button-title"
+              [ngClass]="{ active: !controlDir.control?.value }"
+            >
+              {{ options.buttons?.[0] }}
+            </div>
+          </button>
+          <button type="button" class="action__button" (click)="onChange(true)">
+            <div
+              class="action__button-title"
+              [ngClass]="{ active: controlDir.control?.value }"
+            >
+              {{ options.buttons?.[1] }}
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

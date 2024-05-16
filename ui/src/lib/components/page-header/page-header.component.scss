@@ -1,0 +1,23 @@
+.header__container {
+  padding: 26px 16px 8px;
+  display: flex;
+  justify-content: space-between;
+
+  .header {
+    font-family: Roboto, system-ui, sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  .subheader {
+    font-family: Roboto, system-ui, sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--tg-theme-subtitle-text-color);
+    white-space: nowrap;
+  }
+}

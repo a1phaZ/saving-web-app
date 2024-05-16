@@ -1,0 +1,38 @@
+<ui-page-container>
+  <ui-page-header header="Добавьте кошелек"></ui-page-header>
+  <div class="form" [formGroup]="form">
+    <ui-input-field
+      formControlName="title"
+      [options]="{
+        placeholder: 'Введите название',
+        label: 'Новый кошелек',
+        type: 'text'
+      }"
+    ></ui-input-field>
+    <ui-input-field
+      formControlName="description"
+      [options]="{
+        placeholder: 'Введите описание',
+        label: 'Описание',
+        type: 'text',
+      }"
+    ></ui-input-field>
+    <ui-input-field
+      formControlName="balance"
+      [options]="{
+        placeholder: '0',
+        label: 'Баланс кошелька',
+        suffix: 'р.',
+        type:'number'
+      }"
+    ></ui-input-field>
+
+    <ui-switch-field
+      formControlName="active"
+      [options]="{
+        label: 'Отображать в расчетах',
+        buttons: ['No', 'Yes']
+      }"
+    ></ui-switch-field>
+  </div>
+</ui-page-container>

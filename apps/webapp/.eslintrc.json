@@ -21,7 +21,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "tg-fin-app",
+            "prefix": "webapp",
             "style": "kebab-case"
           }
         ]

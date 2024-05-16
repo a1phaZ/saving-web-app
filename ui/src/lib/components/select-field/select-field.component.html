@@ -1,0 +1,13 @@
+<div class="select__field-container">
+  @if(options.label) {
+    <div class="input__label">{{ options.label }}</div>
+  }
+  <ui-list-item
+    [item]="item"
+    [withArrow]="true"
+    [last]=true
+    (itemClick)="openModal()"
+    [style.width]="'100%'"
+  ></ui-list-item>
+</div>
+

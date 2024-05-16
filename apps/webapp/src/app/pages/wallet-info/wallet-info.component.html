@@ -1,0 +1,22 @@
+<ui-page-container *ngIf="pageContent$ | async as pageContent">
+  <div class="content__block" *ngIf="pageContent.wallet as wallet">
+    <ui-balance [title]="wallet.Title" [value]="wallet.Balance"></ui-balance>
+  </div>
+  <div class="list__block">
+    @if (pageContent.transactions; as transactions) {
+      <ui-content-block>
+        <ui-horizontal-container>
+          <ui-block-header title="Операции"></ui-block-header>
+        </ui-horizontal-container>
+        @for (transaction of transactions;track transaction.id; let last=$last) {
+          <ui-list-item
+            [item]="transaction"
+            [last]="last"
+            (itemClick)="itemClick($event)"
+          ></ui-list-item>
+        }
+      </ui-content-block>
+    }
+  </div>
+</ui-page-container>
+

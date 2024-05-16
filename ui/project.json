@@ -2,7 +2,7 @@
   "name": "ui",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "ui/src",
-  "prefix": "tg-fin-app",
+  "prefix": "ui",
   "tags": [],
   "projectType": "library",
   "targets": {}

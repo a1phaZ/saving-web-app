@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mongo:
+    image: mongo
+    container_name: mongodb
+    restart: unless-stopped
+    ports:
+      - "27117:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+      MONGO_INITDB_DATABASE: app
+    volumes:
+      - ./mongo-data:/data/db
+      - ./mongod.conf:/etc/mongod.conf
+    entrypoint: ["mongod", "--auth", "--config", "/etc/mongod.conf", "--port", "27117"]
+  server:
+    build:
+      context: .
+      dockerfile: ./apps/server/Dockerfile
+    container_name: server
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    links:
+      - mongo

@@ -1,0 +1,14 @@
+@if (!!data.length) {
+  @for (item of data; track item.id; let last=$last) {
+    <ui-list-item
+      [item]="item"
+      [withArrow]="true"
+      [last]=last
+      (itemClick)="onItemClick(item)"
+      [style.width]="'100%'"
+    ></ui-list-item>
+  }
+} @else {
+  <div>asdfasdfasdf asdfasd</div>
+}
+
