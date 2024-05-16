@@ -45,6 +45,7 @@
     "@ngneat/transloco": "^6.0.4",
     "@ngxs/logger-plugin": "^3.8.2",
     "@ngxs/store": "^3.8.2",
+    "@nx-tools/nx-container": "^6.0.0",
     "@nx/cypress": "18.0.5",
     "@nx/esbuild": "18.0.6",
     "@nx/eslint": "18.0.5",
