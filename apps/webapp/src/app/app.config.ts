@@ -6,7 +6,7 @@ import {
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
-import { TranslocoHttpLoader } from './transloco-loader';
+import { translocoConf, TranslocoHttpLoader } from './transloco-loader';
 import { provideTransloco } from '@ngneat/transloco';
 import { NgxsModule } from '@ngxs/store';
 import { AppState } from './store/app/app.state';
@@ -24,14 +24,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes),
     provideHttpClient(),
     provideTransloco({
-      config: {
-        availableLangs: ['en', 'ru'],
-        defaultLang: 'en',
-        // Remove this option if your application doesn't support changing language in runtime.
-        reRenderOnLangChange: true,
-        missingHandler: { allowEmpty: !isDevMode() },
-        prodMode: !isDevMode(),
-      },
+      config: translocoConf,
       loader: TranslocoHttpLoader,
     }),
     importProvidersFrom(
