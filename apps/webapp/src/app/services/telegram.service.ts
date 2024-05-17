@@ -43,7 +43,6 @@ export class TelegramService {
   }
 
   setMainButtonOnClick(f: any) {
-    console.log(f);
     const _f = () => f();
     this._tg.MainButton.onClick(_f);
   }
