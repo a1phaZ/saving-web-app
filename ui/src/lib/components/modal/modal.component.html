@@ -1,13 +1,13 @@
-<div class="modal {{ size }}">
+<div class="modal {{ options?.size }}">
   <div class="modal-header">
-    {{ title }}
+    {{ options?.title }}
     <span class="modal-close" (click)="close()">✕</span>
   </div>
   <div class="modal-content">
     <ng-content></ng-content>
   </div>
-  <div class="modal-footer">
-    <button (click)="submit()">Submit</button>
+  <div class="modal-footer" *ngIf="options?.submitButton">
+    <button (click)="submit()">{{ options?.submitButtonLabel }}</button>
   </div>
 </div>
 

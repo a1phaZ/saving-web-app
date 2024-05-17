@@ -72,7 +72,6 @@ export class TransactionAddComponent
 
   override ngOnInit() {
     super.ngOnInit();
-    this._route.queryParams.subscribe(console.log);
     this._initForm();
 
     this.store

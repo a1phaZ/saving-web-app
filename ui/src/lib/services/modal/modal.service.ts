@@ -35,7 +35,7 @@ export class ModalService {
       }
     );
 
-    modalComponent.instance.title = options?.title;
+    modalComponent.instance.options = options;
     modalComponent.instance.closeEvent.subscribe(() => {
       this.closeModal();
     });
@@ -71,8 +71,7 @@ export class ModalService {
         projectableNodes: [contentViewRef.rootNodes],
       }
     );
-    modalComponent.instance.size = options?.size;
-    modalComponent.instance.title = options?.title;
+    modalComponent.instance.options = options;
     modalComponent.instance.closeEvent.subscribe(() => {
       this.closeModal();
     });

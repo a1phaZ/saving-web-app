@@ -6,7 +6,12 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+export interface IModalOptions {
+  size?: string;
+  title?: string;
+  submitButton?: boolean;
+  submitButtonLabel?: string;
+}
 @Component({
   selector: 'ui-modal',
   standalone: true,
@@ -15,8 +20,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './modal.component.scss',
 })
 export class ModalComponent {
-  @Input() size? = 'md';
-  @Input() title? = 'Modal title';
+  @Input() options?: IModalOptions;
 
   @Output() closeEvent = new EventEmitter<void>();
   @Output() submitEvent = new EventEmitter<string>();
