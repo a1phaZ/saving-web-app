@@ -33,7 +33,9 @@ export class FormFieldComponent<T> implements OnInit, ControlValueAccessor {
   }
 
   writeValue(value: any): void {
-    value && this.controlDir.control?.setValue(value, { emitEvent: false });
+    if (this.controlDir.control && this.controlDir.control.value != value) {
+      this.controlDir.control?.setValue(value, { emitEvent: true });
+    }
   }
 
   registerOnChange(onChange: (value: any) => void): void {
