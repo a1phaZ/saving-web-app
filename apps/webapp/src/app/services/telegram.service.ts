@@ -13,10 +13,10 @@ import {
 export class TelegramService {
   private _tg = WebApp;
 
-  // constructor() {
-  //   console.log(this.SafeInitData);
-  //   console.log(this.UserData);
-  // }
+  constructor() {
+    console.log(this.SafeInitData);
+    console.log(this.UserData);
+  }
 
   get MainButton(): MainButton {
     return this._tg.MainButton;

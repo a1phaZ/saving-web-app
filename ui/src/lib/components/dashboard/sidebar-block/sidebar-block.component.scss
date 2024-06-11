@@ -1,0 +1,27 @@
+.sidebar__block {
+
+  &-header {
+    font-size: 12px;
+    color: #818898;
+    font-weight: 500;
+  }
+
+  &-item {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21.7px;
+    text-align: left;
+    --mdc-list-list-item-label-text-color: #818898;
+    margin: 0 12px;
+    padding: 9px 12px 9px 12px;
+    width: auto;
+    cursor: pointer!important;
+
+    &.selected {
+      --mdc-list-list-item-container-color: #ffffff;
+      --mdc-list-list-item-label-text-color: #0D0D12;
+      --mdc-list-list-item-container-shape: 6px;
+      border: 1px solid #DFE1E7;
+    }
+  }
+}

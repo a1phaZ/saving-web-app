@@ -16,6 +16,7 @@ import localeRu from '@angular/common/locales/ru';
 import localeRuExtra from '@angular/common/locales/extra/ru';
 import { WalletState } from './store/wallet/wallet.state';
 import { TransactionState } from './store/transaction/transaction.state';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 registerLocaleData(localeRu, 'ru-RU', localeRuExtra);
 
@@ -24,18 +25,13 @@ export const appConfig: ApplicationConfig = {
     provideRouter(appRoutes),
     provideHttpClient(),
     provideTransloco({
-      config: translocoConf,
-      loader: TranslocoHttpLoader,
+        config: translocoConf,
+        loader: TranslocoHttpLoader,
     }),
-    importProvidersFrom(
-      NgxsModule.forRoot([AppState, WalletState, TransactionState], {
+    importProvidersFrom(NgxsModule.forRoot([AppState, WalletState, TransactionState], {
         developmentMode: isDevMode(),
-      })
-    ),
+    })),
     importProvidersFrom(NgxsLoggerPluginModule.forRoot()),
-    // {
-    //   provide: LOCALE_ID,
-    //   useValue: 'ru-RU',
-    // },
-  ],
+    provideAnimations()
+],
 };

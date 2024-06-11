@@ -17,3 +17,6 @@ export * from './page-header/page-header.component';
 export * from './select-field/select-field.component';
 export * from './modal/modal.component';
 export * from './field-error-messages/field-error-messages.component';
+
+// Dashboard components
+export * from './dashboard';

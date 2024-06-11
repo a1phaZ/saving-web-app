@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { WalletAddComponent } from './pages/wallet-add/wallet-add.component';
 import { WalletInfoComponent } from './pages/wallet-info/wallet-info.component';
 import { TransactionAddComponent } from './pages/transaction-add/transaction-add.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const appRoutes: Route[] = [
   {
@@ -58,7 +59,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: '',
-    component: HomeComponent,
+    component: DashboardComponent,
     pathMatch: 'full',
   },
 ];

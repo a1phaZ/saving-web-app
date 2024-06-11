@@ -1,0 +1,41 @@
+<mat-list class="sidebar__block">
+  <div mat-subheader class="sidebar__block-header">{{'main' | uppercase}}</div>
+  <mat-list-item
+    class="sidebar__block-item"
+    routerLinkActive="selected"
+    [routerLink]="['/']"
+  >
+    <div>
+      Dashboard
+    </div>
+  </mat-list-item>
+  <mat-list-item
+    class="sidebar__block-item"
+    routerLinkActive="selected"
+    [routerLink]="['/', 'balance']"
+  >
+    Balance
+  </mat-list-item>
+  <mat-list-item
+    class="sidebar__block-item"
+    routerLinkActive="selected"
+    [routerLink]="['/', 'cards']"
+  >
+    Cards
+  </mat-list-item>
+
+  <mat-list-item
+    class="sidebar__block-item"
+    routerLinkActive="selected"
+    [routerLink]="['/', 'transactions']"
+  >
+    Transactions
+  </mat-list-item>
+  <mat-list-item
+    class="sidebar__block-item"
+    routerLinkActive="selected"
+    [routerLink]="['/', 'recipients']"
+  >
+    Recipients
+  </mat-list-item>
+</mat-list>

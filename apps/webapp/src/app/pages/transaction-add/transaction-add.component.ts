@@ -29,6 +29,8 @@ import {
   ETransactionType,
   ITransaction,
 } from '@tg-web-app/entity';
+import { CustomFormControlClass } from '../../../../../../ui/src/lib/components/base/form-control/custom-form-control.class';
+import { TextFormControl } from '../../../../../../ui/src/lib/components/base/form-controls/text-form-control/text.form-control.class';
 
 @Component({
   selector: 'webapp-transaction-add',
@@ -146,13 +148,23 @@ export class TransactionAddComponent
 
   private _initForm(): void {
     this.form = new FormGroup({
-      source: new FormControl(),
-      target: new FormControl(),
+      source: new CustomFormControlClass(),
+      target: new CustomFormControlClass({
+        options: {
+          label: 'target',
+        },
+      }),
       amount: new FormControl(null, [
         Validators.required,
         Validators.min(0.01),
       ]),
-      description: new FormControl(),
+      description: new TextFormControl({
+        options: {
+          placeholder: 'Описание операции',
+          label: 'Описание операции',
+          type: 'text',
+        },
+      }),
     });
 
     this.form
