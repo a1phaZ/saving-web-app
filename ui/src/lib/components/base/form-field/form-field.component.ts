@@ -23,7 +23,6 @@ export class FormFieldComponent<T> implements OnInit, ControlValueAccessor {
   onTouched: () => void = () => {};
 
   constructor(@Self() public controlDir: NgControl) {
-    console.log(controlDir);
     controlDir.valueAccessor = this as unknown as ControlValueAccessor;
   }
 

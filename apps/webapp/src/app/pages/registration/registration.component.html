@@ -1,0 +1,44 @@
+<div class="registration__page">
+  <div class="page__header">
+    <mat-icon>power_settings_new</mat-icon>
+    <div class="change__method-block">
+      <span>Don't have account?</span>
+      <a class="link" [routerLink]="['/', 'login']">Login</a>
+    </div>
+  </div>
+  <div class="page__content">
+    <ui-container class="form__container">
+      <div class="form__container-header">
+        <p class="header">Create a new account</p>
+        <p class="subheader">Enter you details to register</p>
+      </div>
+      <form class="form__container-form" [formGroup]="form">
+        <div class="form__fields">
+          <ui-text-form-field
+            formControlName="fullname"></ui-text-form-field>
+          <ui-text-form-field
+            formControlName="email"></ui-text-form-field>
+          <ui-text-form-field
+            formControlName="password"></ui-text-form-field>
+        </div>
+
+        <button class="button__primary" mat-flat-button color="primary" [disabled]="form.invalid" (click)="signUp(form.value)">Sign Up</button>
+      </form>
+      <div class="form__container-footer">
+        <p class="subheader">By clicking Register, you agree to accept LOGO Financial's</p>
+        <a class="link" [routerLink]="['/', 'terms']">Terms and Condition</a>
+      </div>
+    </ui-container>
+  </div>
+  <div class="page__footer">
+      <span><mat-icon>copyright</mat-icon> Потреблять</span>
+    <ui-container class="no-padding">
+      <div class="select__lang">
+        <mat-icon>translate</mat-icon>
+        {{ 'eng' | uppercase }}
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </div>
+    </ui-container>
+
+  </div>
+</div>

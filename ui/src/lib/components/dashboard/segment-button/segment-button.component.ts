@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, model, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export interface ISegmentButtonItem {
@@ -15,7 +15,17 @@ export interface ISegmentButtonItem {
   styleUrl: './segment-button.component.scss',
 })
 export class SegmentButtonComponent {
-  public items = input([] as ISegmentButtonItem[]);
+  public items = model([] as ISegmentButtonItem[], { alias: 'segments' });
+  public activeChange = output<number>();
 
-  onItemClick(id: number) {}
+  segmentsChange(id: number) {
+    this.items.update((items) => {
+      for (const item of items) {
+        item.selected = item.id === id;
+      }
+      return items;
+    });
+
+    this.activeChange.emit(id);
+  }
 }

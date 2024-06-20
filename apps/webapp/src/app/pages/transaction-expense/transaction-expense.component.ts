@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TransactionAddComponent } from '../transaction-add/transaction-add.component';
 import {
   BalanceComponent,
-  InputFieldComponent,
+  InputBotFieldComponent,
   PageContainerComponent,
   SelectFieldComponent,
 } from '@tg-web-app/ui';
@@ -22,7 +22,7 @@ import { TransactionAdd } from '../../store/transaction/transaction.action';
     CommonModule,
     BalanceComponent,
     FormsModule,
-    InputFieldComponent,
+    InputBotFieldComponent,
     PageContainerComponent,
     ReactiveFormsModule,
     SelectFieldComponent,

@@ -2,12 +2,20 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatSidenav, MatSidenavContainer } from '@angular/material/sidenav';
 import {
+  CardComponent,
   ISegmentButtonItem,
   SegmentButtonComponent,
   SidebarBlockComponent,
 } from '@tg-web-app/ui';
 import { MatIcon } from '@angular/material/icon';
-import { MatButton, MatIconButton } from '@angular/material/button';
+import {
+  MatButton,
+  MatButtonModule,
+  MatIconButton,
+} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @Component({
   selector: 'webapp-dashboard',
@@ -21,6 +29,11 @@ import { MatButton, MatIconButton } from '@angular/material/button';
     MatButton,
     MatIconButton,
     SegmentButtonComponent,
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    CardComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
@@ -48,4 +61,8 @@ export class DashboardComponent {
       selected: false,
     },
   ];
+
+  onSegmentChange(event: any) {
+    console.log('segment change', event);
+  }
 }

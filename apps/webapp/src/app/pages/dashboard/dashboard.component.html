@@ -18,13 +18,19 @@
     </div>
     <div class="content__block-actions">
       <div class="actions__block">
-        <ui-segment-button [items]="fastPeriodChangeItems"></ui-segment-button>
+        <ui-segment-button [segments]="fastPeriodChangeItems" (activeChange)="onSegmentChange($event)"></ui-segment-button>
       </div>
       <div class="actions__block">
         <button mat-stroked-button><mat-icon>calendar_today</mat-icon>8 Feb - 15 Feb 2024</button>
         <button mat-stroked-button><mat-icon>filter_list</mat-icon>Filter</button>
       </div>
     </div>
-    <div class="content__block-cards"></div>
+    <div class="content__block-cards">
+      @for(card of [1, 2, 3, 4, 5, 6]; track $index) {
+        <ui-card>
+        </ui-card>
+      }
+
+    </div>
   </section>
 </mat-sidenav-container>

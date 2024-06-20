@@ -36,6 +36,19 @@
         gap: 8px;
       }
     }
+
+    &-cards {
+      display: flex;
+      flex-flow: row wrap;
+      gap: 16px;
+
+    ui-card {
+      flex: 1 0 200px;
+      min-width: 30%;
+      max-width: 50%;
+    }
+
+    }
   }
 }
 

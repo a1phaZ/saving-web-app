@@ -1,0 +1,35 @@
+.input__wrapper {
+  .input__label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21.7px;
+    text-align: left;
+    color: #272835;
+  }
+
+  .input__container {
+    position: relative;
+
+    .input__prefix {
+      position: absolute;
+      top: calc(50% - 12px);
+      left: 8px;
+
+      mat-icon {
+        color: #818898;
+      }
+    }
+
+    .input__field {
+      width: 100%;
+      height: 48px;
+      padding: 8px 12px 8px 34px;
+      border-radius: 10px;
+      border: 1px solid #DFE1E7;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25.6px;
+      text-align: left;
+    }
+  }
+}

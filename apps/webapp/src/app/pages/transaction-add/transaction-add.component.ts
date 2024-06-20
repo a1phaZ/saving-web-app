@@ -2,12 +2,15 @@ import { Component, inject, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   BalanceComponent,
+  CustomFormControlClass,
+  EFieldTypes,
   EFormStatus,
-  InputFieldComponent,
+  InputBotFieldComponent,
   PageContainerComponent,
   PageHeaderComponent,
   SelectFieldComponent,
   SwitchFieldComponent,
+  TextFormBotControl,
   TListItem,
 } from '@tg-web-app/ui';
 import {
@@ -29,8 +32,6 @@ import {
   ETransactionType,
   ITransaction,
 } from '@tg-web-app/entity';
-import { CustomFormControlClass } from '../../../../../../ui/src/lib/components/base/form-control/custom-form-control.class';
-import { TextFormControl } from '../../../../../../ui/src/lib/components/base/form-controls/text-form-control/text.form-control.class';
 
 @Component({
   selector: 'webapp-transaction-add',
@@ -38,7 +39,7 @@ import { TextFormControl } from '../../../../../../ui/src/lib/components/base/fo
   imports: [
     CommonModule,
     PageContainerComponent,
-    InputFieldComponent,
+    InputBotFieldComponent,
     SwitchFieldComponent,
     FormsModule,
     ReactiveFormsModule,
@@ -158,11 +159,11 @@ export class TransactionAddComponent
         Validators.required,
         Validators.min(0.01),
       ]),
-      description: new TextFormControl({
+      description: new TextFormBotControl({
         options: {
           placeholder: 'Описание операции',
           label: 'Описание операции',
-          type: 'text',
+          type: EFieldTypes.TEXT,
         },
       }),
     });

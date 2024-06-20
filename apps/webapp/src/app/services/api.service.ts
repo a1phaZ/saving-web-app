@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable, InjectionToken } from '@angular/core';
 import { TelegramService } from './telegram.service';
+import { of } from 'rxjs';
 
 export const BASE_URL = new InjectionToken<string>('Base Server Url', {
   factory: () => 'http://localhost:3000/api',

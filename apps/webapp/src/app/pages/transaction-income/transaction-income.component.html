@@ -14,23 +14,21 @@
       [exclude]="[sourceItem.id, targetItem.id]"
     ></ui-select-field>
 
-    <ui-input-field
+    <ui-input-bot-field
       formControlName="amount"
       [options]="{
         placeholder: '0',
         label: 'Сумма операции',
         suffix: 'р.',
-        type:'number'
       }"
-    ></ui-input-field>
+    ></ui-input-bot-field>
 
-    <ui-input-field
+    <ui-input-bot-field
       formControlName="description"
       [options]="{
         placeholder: 'Описание операции',
         label: 'Описание операции',
-        type:'text'
       }"
-    ></ui-input-field>
+    ></ui-input-bot-field>
   </div>
 </ui-page-container>

@@ -1,0 +1,36 @@
+@if(controlDir) {
+  <div class="input__wrapper">
+    @if(options.label) {
+      <div class="input__label">{{ options.label | titlecase }}</div>
+    }
+    <div [style.width]="'100%'">
+      <div class="input__container" [ngClass]="{ input__error: controlDir.control?.touched && !controlDir.control?.valid }">
+        @if(options.prefix) {
+          <span class="input__prefix">
+            <mat-icon>{{options.prefix}}</mat-icon>
+          </span>
+        }
+        <input
+          id="input-{{controlDir.name}}"
+          (input)="onChange($any($event.target).value)"
+          (blur)="onTouched(); blur.emit()"
+          [disabled]="disabled"
+          [placeholder]="options.placeholder || ''"
+          class="form-control input__field"
+          [ngClass]="{
+        'is-invalid': controlDir.control?.touched && !controlDir.control?.valid
+      }"
+          [value]="controlDir.control?.value"
+          [type]="options.type || 'text'"
+          autocomplete="off"
+        />
+        <label for="input-{{controlDir.name}}" class="input__label">{{ options.suffix || '' }}</label>
+
+      </div>
+      @if(controlDir.control?.touched && !controlDir.control?.valid) {
+        <ui-field-error-messages [errors]="controlDir.errors || {}"></ui-field-error-messages>
+      }
+    </div>
+
+  </div>
+}

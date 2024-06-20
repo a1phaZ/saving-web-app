@@ -7,8 +7,22 @@ import { WalletAddComponent } from './pages/wallet-add/wallet-add.component';
 import { WalletInfoComponent } from './pages/wallet-info/wallet-info.component';
 import { TransactionAddComponent } from './pages/transaction-add/transaction-add.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 export const appRoutes: Route[] = [
+  {
+    path: 'dashboard',
+    children: [
+      {
+        path: '',
+        component: DashboardComponent,
+      },
+      {
+        path: '**',
+        redirectTo: '', // TODO Redirect to 404 page
+      },
+    ],
+  },
   {
     path: 'history',
     component: HistoryComponent,
@@ -59,7 +73,7 @@ export const appRoutes: Route[] = [
   },
   {
     path: '',
-    component: DashboardComponent,
+    component: RegistrationComponent,
     pathMatch: 'full',
   },
 ];

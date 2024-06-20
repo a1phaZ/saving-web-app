@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import {
   EFormStatus,
-  InputFieldComponent,
+  InputBotFieldComponent,
   PageContainerComponent,
   PageHeaderComponent,
   SwitchFieldComponent,
@@ -27,7 +27,7 @@ import { BaseTgPage } from '../base/base-tg-page/base-tg-page';
   imports: [
     CommonModule,
     PageContainerComponent,
-    InputFieldComponent,
+    InputBotFieldComponent,
     SwitchFieldComponent,
     FormsModule,
     ReactiveFormsModule,

@@ -1,5 +1,5 @@
 import { FormControl } from '@angular/forms';
-import { IFormFieldOptions } from '@tg-web-app/ui';
+import { EFieldTypes, IFormFieldOptions } from '@tg-web-app/ui';
 
 export type TTextFormControlType = 'text';
 
@@ -9,7 +9,10 @@ export interface TextFormControlOptions {
   type: TTextFormControlType;
 }
 
-export class TextFormControl extends FormControl implements IFormFieldOptions {
+export class TextFormBotControl
+  extends FormControl
+  implements IFormFieldOptions
+{
   constructor(
     data: {
       value?: any;
@@ -21,12 +24,12 @@ export class TextFormControl extends FormControl implements IFormFieldOptions {
     if (data.options) {
       this.label = data?.options?.label || '';
       this.placeholder = data?.options?.placeholder || '';
-      this.type = data?.options?.type || 'text';
+      this.type = data?.options?.type || EFieldTypes.TEXT;
     }
   }
 
   label!: string;
   placeholder!: string;
   suffix!: string;
-  type!: 'text' | 'number';
+  type!: EFieldTypes;
 }

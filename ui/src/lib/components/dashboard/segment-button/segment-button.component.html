@@ -1,5 +1,5 @@
 <div class="segment__button-block">
   @for (item of items(); track item.id) {
-    <span class="item" [ngClass]="{selected: item.selected}" (click)="onItemClick(item.id)">{{ item.name }}</span>
+    <span class="item" [ngClass]="{selected: item.selected}" (click)="segmentsChange(item.id)">{{ item.name }}</span>
   }
 </div>

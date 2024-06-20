@@ -6,7 +6,7 @@ import { FormFieldComponent } from '../base';
 import { FieldErrorMessagesComponent } from '../field-error-messages/field-error-messages.component';
 
 @Component({
-  selector: 'ui-input-field',
+  selector: 'ui-input-bot-field',
   standalone: true,
   imports: [
     CommonModule,
@@ -14,9 +14,9 @@ import { FieldErrorMessagesComponent } from '../field-error-messages/field-error
     ReactiveFormsModule,
     FieldErrorMessagesComponent,
   ],
-  templateUrl: './input-field.component.html',
-  styleUrl: './input-field.component.scss',
+  templateUrl: './input-bot-field.component.html',
+  styleUrl: './input-bot-field.component.scss',
 })
-export class InputFieldComponent extends FormFieldComponent<IFormFieldOptions> {
+export class InputBotFieldComponent extends FormFieldComponent<IFormFieldOptions> {
   // /^[-+]?([0-9]+([\.\,][0-9]*)?|[\.\,][0-9]+)$/
 }
