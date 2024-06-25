@@ -10,6 +10,7 @@ import { TransactionModule } from './transaction/transaction.module';
 import 'dotenv/config';
 import { getMongoConfig } from './db-connect.config';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { BillModule } from './bill/bill.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
     AccountModule,
     WalletModule,
     TransactionModule,
+    BillModule,
   ],
   controllers: [AppController],
   providers: [AppService],
