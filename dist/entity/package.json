@@ -1,0 +1,14 @@
+{
+  "name": "@tg-web-app/entity",
+  "version": "0.0.1",
+  "dependencies": {
+    "@angular/common": "17.3.11",
+    "@angular/core": "17.3.11",
+    "@angular/forms": "17.3.11",
+    "@angular/material": "17.3.10",
+    "@angular/router": "17.3.11",
+    "rxjs": "~7.8.0"
+  },
+  "type": "commonjs",
+  "main": "./index.cjs"
+}
