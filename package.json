@@ -7,7 +7,8 @@
     "dev:webapp": "nx serve webapp",
     "dev:bot": "nx serve bot",
     "dev": "concurrently 'npm:dev:server' 'npm:dev:webapp'",
-    "predev": "docker-compose -f docker-compose.dev.yml up -d"
+    "predev": "docker-compose -f docker-compose.dev.yml up -d",
+    "gh-pages": "nx build webapp --prod --base-href https://a1phaz.github.io/saving-web-app/ --output-path docs"
   },
   "private": true,
   "dependencies": {
