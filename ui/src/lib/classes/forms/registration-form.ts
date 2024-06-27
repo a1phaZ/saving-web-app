@@ -1,25 +1,13 @@
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PasswordFormControl, TextFormControl } from '@tg-web-app/ui';
+import { BaseForm } from './base.form';
 
-export class RegistrationForm extends FormGroup {
+export class RegistrationForm extends BaseForm {
   constructor() {
-    super({});
-
-    this._initForm();
+    super();
   }
 
-  private _initForm() {
-    const controls = this._initControls();
-    this._setControls(controls);
-  }
-
-  private _setControls(controls: Record<string, FormControl>) {
-    Object.keys(controls).forEach((key) => {
-      this.addControl(key, controls[key]);
-    });
-  }
-
-  private _initControls(): Record<string, FormControl> {
+  initControls(): Record<string, FormControl> {
     return {
       fullname: new TextFormControl({
         validatorOrOpts: [Validators.required],

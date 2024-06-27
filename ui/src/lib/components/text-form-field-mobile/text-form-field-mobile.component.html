@@ -1,7 +1,7 @@
 @if(controlDir) {
 <div class="input__wrapper">
   @if(options.label) {
-  <div class="input__label">{{ options.label }}</div>
+  <div class="input__label">{{ options.label | transloco }}</div>
   }
   <div [style.width]="'100%'">
     <div class="input__container" [ngClass]="{ input__error: controlDir.control?.touched && !controlDir.control?.valid }">
@@ -10,14 +10,16 @@
         (input)="onChange($any($event.target).value)"
         (blur)="onTouched(); blur.emit()"
         [disabled]="disabled"
-        [placeholder]="options.placeholder || ''"
+        [placeholder]="(options.placeholder || '') | transloco"
         class="form-control input__field"
         [ngClass]="{
         'is-invalid': controlDir.control?.touched && !controlDir.control?.valid
       }"
         [value]="controlDir.control?.value"
-        [type]="options.type || 'text'"
+        [type]="'text'"
         autocomplete="off"
+        [uiPattern]="pattern"
+        inputmode="decimal"
       />
       <label for="input" class="input__label">{{ options.suffix || '' }}</label>
 
@@ -29,3 +31,5 @@
 
 </div>
 }
+
+<!--^(\d{1,3}|\d{0,3}\.\d{0,2})$-->

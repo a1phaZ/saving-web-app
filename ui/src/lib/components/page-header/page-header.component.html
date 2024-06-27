@@ -1,6 +1,6 @@
-@if (header()) {
+@if (header(); as header) {
   <div class="header__container">
-    <div class="header">{{ header() }}</div>
+    <div class="header">{{ header | transloco }}</div>
     @if(subHeader()) {
       <div class="subheader">{{ subHeader() }}</div>
     }

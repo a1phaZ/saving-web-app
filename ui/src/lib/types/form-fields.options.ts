@@ -15,9 +15,24 @@ export interface ITextFormFieldOptions extends IFormFieldOptions {
   prefix: string;
 }
 
+export interface ISelectFormFieldOptions<T> {
+  type: EFieldTypes.SELECT;
+  label: string;
+  name: string;
+  placeholder: string;
+  values: T[];
+}
+
 export enum EFieldTypes {
   TEXT = 'text',
   NUMBER = 'number',
   SWITCH = 'switch',
   PASSWORD = 'password',
+  SELECT = 'select',
+}
+
+export interface IFormControlConstructorData<T = any> {
+  value?: string | number | null;
+  validatorOrOpts?: any;
+  options?: Partial<T>;
 }

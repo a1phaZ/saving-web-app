@@ -21,7 +21,7 @@ export class BillModel implements Partial<IBill> {
   @Prop({
     required: true,
   })
-  PeriodId: string; // TODO period model
+  Period: number;
   @Prop()
   StopDate: Date;
   @Prop({

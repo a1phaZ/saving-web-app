@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import {
   EFormStatus,
-  InputBotFieldComponent,
+  TextFormFieldMobileComponent,
   PageContainerComponent,
   PageHeaderComponent,
   SwitchFieldComponent,
@@ -27,7 +27,7 @@ import { BaseTgPage } from '../base/base-tg-page/base-tg-page';
   imports: [
     CommonModule,
     PageContainerComponent,
-    InputBotFieldComponent,
+    TextFormFieldMobileComponent,
     SwitchFieldComponent,
     FormsModule,
     ReactiveFormsModule,
@@ -47,13 +47,12 @@ export class WalletAddComponent
   private _destroy$: Subject<void> = new Subject<void>();
 
   override MainButtonText = 'Сохранить';
-  public override appStoreName = 'wallet.add';
 
   public form!: FormGroup;
 
-  override ngOnInit(): void {
+  ngOnInit(): void {
     this._initForm();
-    super.ngOnInit();
+    this.initPage();
   }
 
   override ngOnDestroy(): void {

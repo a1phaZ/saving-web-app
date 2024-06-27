@@ -8,8 +8,14 @@ import { WalletInfoComponent } from './pages/wallet-info/wallet-info.component';
 import { TransactionAddComponent } from './pages/transaction-add/transaction-add.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
+import { billRoutes } from './pages/bill/bill.routes';
 
 export const appRoutes: Route[] = [
+  {
+    path: 'bill',
+    // redirectTo: 'history',
+    children: billRoutes,
+  },
   {
     path: 'dashboard',
     children: [
@@ -73,7 +79,12 @@ export const appRoutes: Route[] = [
   },
   {
     path: '',
-    component: RegistrationComponent,
+    redirectTo: 'bill',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    redirectTo: 'bill',
     pathMatch: 'full',
   },
 ];

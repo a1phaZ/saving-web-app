@@ -33,7 +33,6 @@ import { TransactionState } from '../../store/transaction/transaction.state';
   styleUrl: './wallet-info.component.scss',
 })
 export class WalletInfoComponent extends BaseTgPage implements OnInit {
-  public override appStoreName = 'wallet.info';
   override MainButtonText = 'Button';
   private _router = inject(Router);
   private _zone = inject(NgZone);
@@ -52,8 +51,8 @@ export class WalletInfoComponent extends BaseTgPage implements OnInit {
   );
   private _destroy$ = new Subject<void>();
 
-  override ngOnInit(): void {
-    super.ngOnInit();
+  ngOnInit(): void {
+    this.initPage();
   }
 
   override MainButtonFn(): void {

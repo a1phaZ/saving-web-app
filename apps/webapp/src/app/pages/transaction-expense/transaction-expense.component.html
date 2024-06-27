@@ -4,30 +4,30 @@
     [value]="form.get('amount')?.value || 0"
   ></ui-balance>
   <!--  <ui-page-header header="Новая операция"></ui-page-header>-->
-  <div class="form" [formGroup]="form">
-    <ui-select-field
-      formControlName="source"
-      [options]="{label: 'Счет списания'}"
-      [item]="sourceItem"
-      [items]="sourceList"
-      [exclude]="[targetItem.id, sourceItem.id]"
-    ></ui-select-field>
+<!--  <div class="form" [formGroup]="form">-->
+<!--    <ui-select-field-->
+<!--      formControlName="source"-->
+<!--      [options]="{label: 'Счет списания'}"-->
+<!--      [item]="sourceItem"-->
+<!--      [items]="sourceList"-->
+<!--      [exclude]="[targetItem.id, sourceItem.id]"-->
+<!--    ></ui-select-field>-->
 
-    <ui-input-bot-field
-      formControlName="amount"
-      [options]="{
-        placeholder: '0',
-        label: 'Сумма операции',
-        suffix: 'р.',
-      }"
-    ></ui-input-bot-field>
+<!--    <ui-text-form-field-mobile-->
+<!--      formControlName="amount"-->
+<!--      [options]="{-->
+<!--        placeholder: '0',-->
+<!--        label: 'Сумма операции',-->
+<!--        suffix: 'р.',-->
+<!--      }"-->
+<!--    ></ui-text-form-field-mobile>-->
 
-    <ui-input-bot-field
-      formControlName="description"
-      [options]="{
-        placeholder: 'Описание операции',
-        label: 'Описание операции',
-      }"
-    ></ui-input-bot-field>
-  </div>
+<!--    <ui-text-form-field-mobile-->
+<!--      formControlName="description"-->
+<!--      [options]="{-->
+<!--        placeholder: 'Описание операции',-->
+<!--        label: 'Описание операции',-->
+<!--      }"-->
+<!--    ></ui-text-form-field-mobile>-->
+<!--  </div>-->
 </ui-page-container>

@@ -4,4 +4,5 @@ export enum EActionPathByNameResolver {
   ADD_TRANSACTION_INCOME = '/transaction/income',
   ADD_TRANSACTION_EXPENSE = '/transaction/expense',
   STATISTICS = '/statistics',
+  BILL_ADD = '/bill/add',
 }

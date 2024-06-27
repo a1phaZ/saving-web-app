@@ -1,9 +1,11 @@
+import { EIconName, TListItem } from '@tg-web-app/ui';
+
 export interface IBill {
   Id: string;
   Title: string;
   Sum: number;
   PaidDate: number;
-  PeriodId: string; // TODO period model
+  Period: number;
   StopDate: Date;
   Owner: number;
   Description: string;
@@ -16,7 +18,7 @@ export class Bill implements IBill {
   private _title!: string;
   private _sum!: number;
   private _paidDate!: number;
-  private _periodId!: string;
+  private _period!: number;
   private _stopDate!: Date;
   private _owner!: number;
   private _description!: string;
@@ -28,7 +30,7 @@ export class Bill implements IBill {
     this.Title = params.Title;
     this.Sum = params.Sum;
     this.PaidDate = params.PaidDate;
-    this.PeriodId = params.PeriodId;
+    this.Period = params.Period;
     this.StopDate = params.StopDate;
     this.Owner = params.Owner;
     this.Description = params.Description;
@@ -68,12 +70,12 @@ export class Bill implements IBill {
     this._paidDate = value;
   }
 
-  public get PeriodId(): string {
-    return this._periodId;
+  public get Period(): number {
+    return this._period;
   }
 
-  public set PeriodId(value: string) {
-    this._periodId = value;
+  public set Period(value: number) {
+    this._period = value;
   }
 
   public get StopDate(): Date {
@@ -122,12 +124,38 @@ export class Bill implements IBill {
       Title: this._title,
       Sum: this._sum,
       PaidDate: this._paidDate,
-      PeriodId: this._periodId,
+      Period: this._period,
       StopDate: this._stopDate,
       Owner: this._owner,
       Description: this._description,
       Active: this._active,
       Status: this._status,
     };
+  }
+
+  public get ListItem(): TListItem {
+    return {
+      id: this.Id,
+      title: this.Title,
+      type: 'wallet',
+      icon: {
+        name: EIconName.saxBillOutline,
+        size: '32px',
+      },
+      additional: this.Sum,
+      subtitle: this.subtitle,
+    };
+  }
+
+  private get subtitle(): string {
+    const now = new Date();
+    const day = now.getDate();
+    const delta = this.PaidDate - day;
+    if (delta === 0) {
+      return 'Сегодня';
+    }
+    return delta > 0
+      ? `Оплатить в течение ${delta} дня`
+      : `Просрочено ${Math.abs(delta)} дней`;
   }
 }

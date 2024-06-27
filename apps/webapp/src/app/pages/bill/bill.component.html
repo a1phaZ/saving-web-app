@@ -1,0 +1,27 @@
+<ui-page-container>
+  <ui-page-header header="bill.page.header"></ui-page-header>
+
+  <ui-content-block>
+    <ui-list-item
+      [item]="addButton"
+      [last]="true"
+      (itemClick)="itemClick($event)"
+    ></ui-list-item>
+    <ui-horizontal-divider text="divider.or"></ui-horizontal-divider>
+
+    <ui-search (onSearchChange)="searchString = $event"></ui-search>
+    <ui-horizontal-container>
+      <ui-block-header title="bill.saved"></ui-block-header>
+    </ui-horizontal-container>
+    <ng-container *ngIf="(billsList$ | async) as list">
+      @for (item of list | search : searchString; track $index; let last=$last) {
+        <ui-list-item
+          [item]="item"
+          [last]="last"
+          (itemClick)="itemClick($event)"
+        ></ui-list-item>
+      }
+    </ng-container>
+
+  </ui-content-block>
+</ui-page-container>

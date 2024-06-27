@@ -43,7 +43,7 @@ export class BillController {
       Description: body.Description,
       Owner: owner,
       Sum: body.Sum,
-      PeriodId: body.PeriodId,
+      Period: body.Period,
       StopDate: body.StopDate,
       PaidDate: body.PaidDate,
     });

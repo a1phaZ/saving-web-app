@@ -2,7 +2,7 @@ import { Directive, OnDestroy, OnInit, inject } from '@angular/core';
 import { TelegramService } from '../../../services/telegram.service';
 
 @Directive()
-export abstract class BaseTgPage implements OnInit, OnDestroy {
+export abstract class BaseTgPage implements OnDestroy {
   protected _tg = inject(TelegramService);
 
   private _mainButtonHandler!: () => void;
@@ -10,9 +10,12 @@ export abstract class BaseTgPage implements OnInit, OnDestroy {
   abstract MainButtonText: string;
   abstract MainButtonFn(): void;
   abstract BackButtonFn(): void;
-  abstract appStoreName: string;
 
-  public ngOnInit(): void {
+  // public ngOnInit(): void {
+  //   this.initPage();
+  // }
+
+  protected initPage(): void {
     this._backButtonHandler = this.BackButtonFn.bind(this);
     this._tg.BackButton.show();
     this._tg.BackButton.onClick(this._backButtonHandler);

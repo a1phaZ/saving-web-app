@@ -5,13 +5,13 @@ import {
   CustomFormControlClass,
   EFieldTypes,
   EFormStatus,
-  InputBotFieldComponent,
+  TextFormFieldMobileComponent,
   PageContainerComponent,
   PageHeaderComponent,
   SelectFieldComponent,
   SwitchFieldComponent,
-  TextFormBotControl,
   TListItem,
+  TextFormControl,
 } from '@tg-web-app/ui';
 import {
   FormControl,
@@ -39,7 +39,7 @@ import {
   imports: [
     CommonModule,
     PageContainerComponent,
-    InputBotFieldComponent,
+    TextFormFieldMobileComponent,
     SwitchFieldComponent,
     FormsModule,
     ReactiveFormsModule,
@@ -71,10 +71,9 @@ export class TransactionAddComponent
   private _route = inject(ActivatedRoute);
   private _destroy$: Subject<void> = new Subject<void>();
   private _amountMaxValidator!: ValidatorFn;
-  public override appStoreName = 'transaction.add';
 
-  override ngOnInit() {
-    super.ngOnInit();
+  ngOnInit() {
+    this.initPage();
     this._initForm();
 
     this.store
@@ -159,7 +158,7 @@ export class TransactionAddComponent
         Validators.required,
         Validators.min(0.01),
       ]),
-      description: new TextFormBotControl({
+      description: new TextFormControl({
         options: {
           placeholder: 'Описание операции',
           label: 'Описание операции',

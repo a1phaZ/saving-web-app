@@ -10,6 +10,7 @@ import {
   saxWalletMoneyOutline,
   saxArrangeCircle2Outline,
   saxPresentionChartOutline,
+  saxBillOutline,
 } from '@ng-icons/iconsax/outline';
 import { EIconName } from '../../types';
 
@@ -27,6 +28,7 @@ import { EIconName } from '../../types';
       saxAddCircleOutline,
       saxArrangeCircle2Outline,
       saxPresentionChartOutline,
+      saxBillOutline,
     }),
   ],
   templateUrl: './icon.component.html',

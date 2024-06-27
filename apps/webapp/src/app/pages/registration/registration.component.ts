@@ -6,6 +6,7 @@ import {
   ContainerComponent,
   RegistrationForm,
   TextFormFieldComponent,
+  TextFormFieldMobileComponent,
 } from '@tg-web-app/ui';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatButton } from '@angular/material/button';

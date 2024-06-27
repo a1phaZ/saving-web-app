@@ -10,7 +10,7 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Directive()
 export class FormFieldComponent<T> implements OnInit, ControlValueAccessor {
-  @Input()
+  // @Input()
   options: Partial<T> = {};
 
   // eslint-disable-next-line @angular-eslint/no-output-native

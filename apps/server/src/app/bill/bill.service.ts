@@ -39,7 +39,7 @@ export class BillService {
       Description: data.Description,
       Owner: data.Owner,
       Sum: data.Sum,
-      PeriodId: data.PeriodId,
+      Period: data.Period,
       StopDate: data.StopDate,
       PaidDate: data.PaidDate,
     };
