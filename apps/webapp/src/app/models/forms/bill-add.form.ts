@@ -16,6 +16,7 @@ export class BillAddForm extends BaseForm {
   protected initControls(): Record<string, FormControl> {
     return {
       Title: new TextFormControl({
+        value: '',
         options: {
           placeholder: 'bill.add.form.title.placeholder',
           label: 'bill.add.form.title.label',

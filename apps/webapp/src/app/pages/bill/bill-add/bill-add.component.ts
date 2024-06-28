@@ -65,8 +65,7 @@ export class BillAddComponent extends BaseTgPage implements OnInit, OnDestroy {
   }
 
   MainButtonFn(): void {
-    console.log(this.billAddForm.value);
-    this._store.dispatch(new BillAdd(this.billAddForm.value));
+    this.submitForm();
   }
 
   private initForm() {
@@ -90,5 +89,9 @@ export class BillAddComponent extends BaseTgPage implements OnInit, OnDestroy {
       this._tg.hideMainButton();
       return;
     }
+  }
+
+  protected submitForm() {
+    this._store.dispatch(new BillAdd(this.billAddForm.value));
   }
 }
