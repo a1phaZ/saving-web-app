@@ -21,6 +21,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { Router } from '@angular/router';
 import { BillAdd } from '../../../store/bill/bill.actions';
 import { Store } from '@ngxs/store';
+import { PERIOD_LIST_ITEMS } from '../../../config/periods.config';
 
 @Component({
   selector: 'webapp-bill-add',
@@ -42,6 +43,8 @@ export class BillAddComponent extends BaseTgPage implements OnInit, OnDestroy {
   private _router = inject(Router);
   private _cdr = inject(ChangeDetectorRef);
   private _store = inject(Store);
+
+  private periods = inject(PERIOD_LIST_ITEMS);
 
   public MainButtonText!: string;
   public billAddForm!: BillAddForm;
@@ -69,7 +72,7 @@ export class BillAddComponent extends BaseTgPage implements OnInit, OnDestroy {
   }
 
   private initForm() {
-    this.billAddForm = new BillAddForm();
+    this.billAddForm = new BillAddForm(this.periods);
 
     this.billAddForm.statusChanges
       .pipe(takeUntil(this._destroy$))

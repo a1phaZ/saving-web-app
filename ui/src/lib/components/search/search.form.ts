@@ -5,6 +5,8 @@ import { TextFormControl } from '@tg-web-app/ui';
 export class SearchForm<T> extends BaseForm {
   constructor() {
     super();
+
+    this.initForm();
   }
 
   protected initControls(): Record<string, FormControl> {

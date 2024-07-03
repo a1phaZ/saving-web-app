@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '../icon/icon.component';
 import { EIconName, TListItem } from '../../types';
 import { CurrencyComponent } from '../currency/currency.component';
+import { TranslocoPipe } from '@ngneat/transloco';
 
 @Component({
   selector: 'ui-list-item',
   standalone: true,
-  imports: [CommonModule, IconComponent, CurrencyComponent],
+  imports: [CommonModule, IconComponent, CurrencyComponent, TranslocoPipe],
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.scss'],
 })

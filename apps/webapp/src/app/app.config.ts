@@ -20,6 +20,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { BillState } from './store/bill/bill.state';
 import { BillService } from './services/bill.service';
 import { MockBillService } from './services/mock-bill.service';
+import { periodsProvider } from './config/periods.config';
 
 registerLocaleData(localeRu, 'ru-RU', localeRuExtra);
 
@@ -42,5 +43,6 @@ export const appConfig: ApplicationConfig = {
       provide: BillService,
       useClass: MockBillService,
     },
+    periodsProvider,
   ],
 };
