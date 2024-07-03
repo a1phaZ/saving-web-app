@@ -32,6 +32,10 @@ export class BillState {
 
   @Action(BillGet)
   getAll(ctx: StateContext<Bill[]>, action: BillGet) {
+    const state = ctx.getState();
+    if (state.length > 0) {
+      return;
+    }
     return this._billService.getBills().pipe(
       tap((bills) => {
         ctx.dispatch(new BillGetSuccess(bills));

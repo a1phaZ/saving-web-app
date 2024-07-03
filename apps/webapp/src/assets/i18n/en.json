@@ -1,8 +1,8 @@
 {
-    "tabbar": {
-        "history": "History",
-        "moneybox": "Moneybox"
-    },
+  "tabbar": {
+    "history": "History",
+    "moneybox": "Moneybox"
+  },
   "bill": {
     "saved": "Saved bills",
     "add": {
@@ -39,5 +39,12 @@
   },
   "button": {
     "save": "Save"
+  },
+  "period": {
+    "daily": "Daily",
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "custom": "Custom"
   }
 }

@@ -1,21 +1,23 @@
 import {
   BaseForm,
   EFieldTypes,
-  EIconName,
   SelectFormControl,
   TextFormControl,
   TListItem,
 } from '@tg-web-app/ui';
 import { FormControl } from '@angular/forms';
+import { EPeriods } from '../../config/periods.config';
 
 export class BillAddForm extends BaseForm {
-  constructor() {
+  constructor(private readonly periods: TListItem[]) {
     super();
+    this.initForm();
   }
 
   protected initControls(): Record<string, FormControl> {
     return {
       Title: new TextFormControl({
+        value: '',
         options: {
           placeholder: 'bill.add.form.title.placeholder',
           label: 'bill.add.form.title.label',
@@ -31,40 +33,12 @@ export class BillAddForm extends BaseForm {
         },
       }),
       Period: new SelectFormControl<TListItem>({
-        value: '3',
+        value: EPeriods.MONTHLY,
         options: {
           label: 'bill.add.form.period.label',
           name: 'bill.add.form.period.name',
           placeholder: 'bill.add.form.period.placeholder',
-          values: [
-            {
-              id: '3',
-              type: 'wallet',
-              title: 'bill.add.form.period.values.3',
-              icon: {
-                name: EIconName.saxBillOutline,
-                size: '24px',
-              },
-            },
-            {
-              id: '6',
-              type: 'wallet',
-              title: 'bill.add.form.period.values.6',
-              icon: {
-                name: EIconName.saxBillOutline,
-                size: '24px',
-              },
-            },
-            {
-              id: '12',
-              type: 'wallet',
-              title: 'bill.add.form.period.values.12',
-              icon: {
-                name: EIconName.saxBillOutline,
-                size: '24px',
-              },
-            },
-          ],
+          values: this.periods,
         },
       }),
       PaidDate: new TextFormControl({

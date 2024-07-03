@@ -3,11 +3,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export abstract class BaseForm extends FormGroup {
   protected constructor() {
     super({});
-
-    this._initForm();
   }
 
-  private _initForm() {
+  protected initForm() {
     const controls = this.initControls();
     this._setControls(controls);
   }

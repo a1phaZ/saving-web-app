@@ -1,9 +1,21 @@
 @if (billAddForm) {
   <form class="form form__container" [formGroup]="billAddForm">
-    <ui-text-form-field-mobile formControlName="Title"></ui-text-form-field-mobile>
-    <ui-text-form-field-mobile formControlName="Sum"></ui-text-form-field-mobile>
-    <ui-select-field formControlName="Period"></ui-select-field>
-    <ui-text-form-field-mobile formControlName="PaidDate"></ui-text-form-field-mobile>
+    <ui-text-form-field-mobile
+      formControlName="Title"
+    ></ui-text-form-field-mobile>
+    <ui-text-form-field-mobile
+      formControlName="Sum"
+    ></ui-text-form-field-mobile>
+    <ui-select-field
+      formControlName="Period"
+    ></ui-select-field>
+    <ui-text-form-field-mobile
+      formControlName="PaidDate"
+    ></ui-text-form-field-mobile>
   </form>
+
+  @if (!_tg.UserData) {
+    <button (click)="submitForm()">{{ MainButtonText }}</button>
+  }
 }
 
