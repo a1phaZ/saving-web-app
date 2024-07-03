@@ -20,6 +20,8 @@ export * from './field-error-messages/field-error-messages.component';
 export * from './container/container.component';
 export * from './horizontal-divider/horizontal-divider.component';
 export * from './search/search.component';
+export * from './calendar-field/calendar-field.component';
+export * from './calendar/calendar.component';
 
 // Dashboard components
 export * from './dashboard';

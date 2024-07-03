@@ -8,4 +8,5 @@ export enum EIconName {
   saxArrangeCircle2Outline = 'saxArrangeCircle2Outline',
   saxPresentionChartOutline = 'saxPresentionChartOutline',
   saxBillOutline = 'saxBillOutline',
+  saxCalendar1Outline = 'saxCalendar1Outline',
 }

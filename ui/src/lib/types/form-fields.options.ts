@@ -23,12 +23,17 @@ export interface ISelectFormFieldOptions<T> {
   values: T[];
 }
 
+export interface ICalendarFormFieldOptions extends IFormFieldOptions {
+  type: EFieldTypes.CALENDAR;
+}
+
 export enum EFieldTypes {
   TEXT = 'text',
   NUMBER = 'number',
   SWITCH = 'switch',
   PASSWORD = 'password',
   SELECT = 'select',
+  CALENDAR = 'calendar',
 }
 
 export interface IFormControlConstructorData<T = any> {

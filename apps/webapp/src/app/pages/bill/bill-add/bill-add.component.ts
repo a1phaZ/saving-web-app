@@ -13,6 +13,7 @@ import { TranslocoService } from '@ngneat/transloco';
 import { BillAddForm } from '../../../models/forms/bill-add.form';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
+  CalendarFieldComponent,
   EFormStatus,
   SelectFieldComponent,
   TextFormFieldMobileComponent,
@@ -31,6 +32,7 @@ import { PERIOD_LIST_ITEMS } from '../../../config/periods.config';
     ReactiveFormsModule,
     TextFormFieldMobileComponent,
     SelectFieldComponent,
+    CalendarFieldComponent,
   ],
   templateUrl: './bill-add.component.html',
   styleUrl: './bill-add.component.scss',
