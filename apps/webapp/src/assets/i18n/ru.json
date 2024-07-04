@@ -20,7 +20,7 @@
           "label": "Период",
           "placeholder": "Выберите период"
         },
-        "paid-date": {
+        "payday": {
           "label": "День оплаты",
           "placeholder": "Введите день оплаты"
         }

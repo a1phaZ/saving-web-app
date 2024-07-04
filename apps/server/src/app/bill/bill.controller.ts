@@ -5,7 +5,6 @@ import {
   Get,
   Param,
   Post,
-  Req,
   UseGuards,
 } from '@nestjs/common';
 import { BillService } from './bill.service';
@@ -45,7 +44,7 @@ export class BillController {
       Sum: body.Sum,
       Period: body.Period,
       StopDate: body.StopDate,
-      PaidDate: body.PaidDate,
+      PayDay: body.PayDay,
     });
   }
 

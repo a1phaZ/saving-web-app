@@ -41,7 +41,7 @@ export class BillService {
       Sum: data.Sum,
       Period: data.Period,
       StopDate: data.StopDate,
-      PaidDate: data.PaidDate,
+      PayDay: data.PayDay,
     };
     const createdBill = new this.billModel(dataToSave);
     return createdBill.save();

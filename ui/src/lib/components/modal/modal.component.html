@@ -11,4 +11,4 @@
   </div>
 </div>
 
-<div class="modal-backdrop" (click)="close()"></div>
+<div class="modal-backdrop" *ngIf="active" (click)="close()"></div>

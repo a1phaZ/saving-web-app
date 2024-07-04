@@ -13,7 +13,7 @@ export class MockBillService extends BillService {
 
   override getBills(): Observable<any> {
     return of(
-      BILLS.sort((a, b) => a.PaidDate - b.PaidDate).map(this.responseToBill)
+      BILLS.sort((a, b) => a.PayDay - b.PayDay).map(this.responseToBill)
     );
   }
 
@@ -28,7 +28,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: 'Comic Book Villains',
     Active: false,
     Owner: 24195154,
-    PaidDate: 6,
+    PayDay: 6,
     Description: '172 Kinsman Trail',
     StopDate: new Date(),
     Status: 'active',
@@ -41,7 +41,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: "Porky's Revenge",
     Active: false,
     Owner: 91779406,
-    PaidDate: 20,
+    PayDay: 20,
     Description: '71646 Tennyson Street',
     StopDate: new Date(),
     Status: 'active',
@@ -54,7 +54,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: 'Quantum of Solace',
     Active: false,
     Owner: 61263541,
-    PaidDate: 11,
+    PayDay: 11,
     Description: '9 Manitowish Trail',
     StopDate: new Date(),
     Status: 'active',
@@ -67,7 +67,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: 'Keoma',
     Active: true,
     Owner: 77564014,
-    PaidDate: 4,
+    PayDay: 4,
     Description: '6 Dawn Trail',
     StopDate: new Date(),
     Status: 'active',
@@ -80,7 +80,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: 'Stevie Nicks: Live at Red Rocks',
     Active: false,
     Owner: 14174500,
-    PaidDate: 23,
+    PayDay: 23,
     Description: '1842 Ilene Trail',
     StopDate: new Date(),
     Status: 'active',
@@ -93,7 +93,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: 'Burnt by the Sun 2 (Utomlyonnye solntsem 2)',
     Active: false,
     Owner: 22836698,
-    PaidDate: 26,
+    PayDay: 26,
     Description: '13 Blue Bill Park Pass',
     StopDate: new Date(),
     Status: 'active',
@@ -106,7 +106,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: 'Kommissarie Späck',
     Active: true,
     Owner: 40702301,
-    PaidDate: 7,
+    PayDay: 7,
     Description: '35668 Boyd Way',
     StopDate: new Date(),
     Status: 'active',
@@ -119,7 +119,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: "Who Is Harry Nilsson (And Why Is Everybody Talkin' About Him?)",
     Active: true,
     Owner: 66945347,
-    PaidDate: 4,
+    PayDay: 4,
     Description: '3 Lotheville Road',
     StopDate: new Date(),
     Status: 'active',
@@ -132,7 +132,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: 'Bandaged',
     Active: false,
     Owner: 80084465,
-    PaidDate: 1,
+    PayDay: 1,
     Description: '616 Schurz Circle',
     StopDate: new Date(),
     Status: 'active',
@@ -145,7 +145,7 @@ const BILLS: Array<IBill & { _id: string }> = [
     Title: 'Alive Day Memories: Home from Iraq (Occupation Iraq)',
     Active: true,
     Owner: 30793493,
-    PaidDate: 26,
+    PayDay: 26,
     Description: '578 Oneill Center',
     StopDate: new Date(),
     Status: 'active',

@@ -4,7 +4,7 @@ export interface IBill {
   Id: string;
   Title: string;
   Sum: number;
-  PaidDate: number;
+  PayDay: number;
   Period: number;
   StopDate: Date;
   Owner: number;
@@ -17,7 +17,7 @@ export class Bill implements IBill {
   private _id!: string;
   private _title!: string;
   private _sum!: number;
-  private _paidDate!: number;
+  private _payDay!: number;
   private _period!: number;
   private _stopDate!: Date;
   private _owner!: number;
@@ -29,7 +29,7 @@ export class Bill implements IBill {
     this.Id = params.Id;
     this.Title = params.Title;
     this.Sum = params.Sum;
-    this.PaidDate = params.PaidDate;
+    this.PayDay = params.PayDay;
     this.Period = params.Period;
     this.StopDate = params.StopDate;
     this.Owner = params.Owner;
@@ -62,12 +62,12 @@ export class Bill implements IBill {
     this._sum = value;
   }
 
-  public get PaidDate(): number {
-    return this._paidDate;
+  public get PayDay(): number {
+    return this._payDay;
   }
 
-  public set PaidDate(value: number) {
-    this._paidDate = value;
+  public set PayDay(value: number) {
+    this._payDay = value;
   }
 
   public get Period(): number {
@@ -123,7 +123,7 @@ export class Bill implements IBill {
       Id: this._id,
       Title: this._title,
       Sum: this._sum,
-      PaidDate: this._paidDate,
+      PayDay: this._payDay,
       Period: this._period,
       StopDate: this._stopDate,
       Owner: this._owner,
@@ -150,7 +150,7 @@ export class Bill implements IBill {
   private get subtitle(): string {
     const now = new Date();
     const day = now.getDate();
-    const delta = this.PaidDate - day;
+    const delta = this.PayDay - day;
     if (delta === 0) {
       return 'Сегодня';
     }

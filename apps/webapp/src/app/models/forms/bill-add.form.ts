@@ -42,9 +42,9 @@ export class BillAddForm extends BaseForm {
           values: this.periods,
         },
       }),
-      PaidDate: new CalendarFormControl({
+      PayDay: new CalendarFormControl({
         options: {
-          label: 'bill.add.form.paid-date.label',
+          label: 'bill.add.form.payday.label',
           type: EFieldTypes.CALENDAR,
         },
       }),

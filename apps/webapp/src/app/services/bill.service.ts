@@ -17,7 +17,7 @@ export class BillService {
       .pipe(
         map((result: Array<Bill & { _id: string }>) => {
           return result
-            .sort((a: Bill, b: Bill) => a.PaidDate - b.PaidDate)
+            .sort((a: Bill, b: Bill) => a.PayDay - b.PayDay)
             .map(this.responseToBill);
         })
       );
@@ -36,7 +36,7 @@ export class BillService {
       Active: data.Active,
       Description: data.Description || '',
       Owner: data.Owner,
-      PaidDate: data.PaidDate,
+      PayDay: data.PayDay,
       Period: data.Period,
       Status: data.Status,
       StopDate: data.StopDate,

@@ -7,19 +7,15 @@ import {
   Output,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+import { animate, style, transition, trigger } from '@angular/animations';
+
 export interface IModalOptions {
   size?: string;
   title?: string;
   submitButton?: boolean;
   submitButtonLabel?: string;
 }
+
 @Component({
   selector: 'ui-modal',
   standalone: true,

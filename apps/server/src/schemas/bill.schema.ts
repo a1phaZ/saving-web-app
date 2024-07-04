@@ -17,7 +17,7 @@ export class BillModel implements Partial<IBill> {
   @Prop({
     required: true,
   })
-  PaidDate: number;
+  PayDay: number;
   @Prop({
     required: true,
   })
