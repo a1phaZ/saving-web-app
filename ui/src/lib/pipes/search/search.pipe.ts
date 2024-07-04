@@ -8,7 +8,7 @@ import { TListItem } from '@tg-web-app/ui';
 export class SearchPipe implements PipeTransform {
   transform(list: TListItem[], searchString: string = ''): TListItem[] {
     return list.filter((item) =>
-      item.title.toLowerCase().includes(searchString.toLowerCase())
+      item.title?.toLowerCase().includes(searchString.toLowerCase())
     );
   }
 }

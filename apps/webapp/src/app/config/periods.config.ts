@@ -12,7 +12,7 @@ export enum EPeriods {
   WEEKLY = 'weekly',
   MONTHLY = 'monthly',
   YEARLY = 'yearly',
-  CUSTOM = 'custom',
+  // CUSTOM = 'custom',
 }
 
 export const periodsProvider: Provider[] = [
@@ -23,11 +23,10 @@ export const periodsProvider: Provider[] = [
   {
     provide: PERIOD_LIST_ITEMS,
     useFactory: () => {
-      console.log(Object.values(EPeriods));
       return Object.values(EPeriods).map((item) => ({
         id: item,
         type: 'wallet',
-        title: `period.${item}`,
+        titleCode: `period.${item}`,
         icon: {
           name: 'sax-bill-outline',
           size: '24px',

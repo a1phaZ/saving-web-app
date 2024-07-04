@@ -7,7 +7,8 @@ export type TListItem =
   | TListWallet
   | {
       id: string;
-      title: string;
+      title?: string;
+      titleCode?: string;
       subtitle?: string;
       type: 'item';
       icon: TIcon;

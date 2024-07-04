@@ -18,7 +18,11 @@
 
     <div class="content__container">
       <div class="content__container-primary">
-        <div class="content__title">{{ item.title | transloco }}</div>
+        @if (item.titleCode) {
+          <div class="content__title">{{ item.titleCode | transloco }}</div>
+        } @else {
+          <div class="content__title">{{ item.title }}</div>
+        }
         @if (item.subtitle) {
         <div class="content__subtitle">{{ item.subtitle }}</div>
 
