@@ -1,0 +1,13 @@
+<!--<p (click)="openModal()">calendar-field works!</p>-->
+<div class="calendar__field-container">
+  @if(options.label) {
+    <div class="input__label">{{ options.label | transloco }}</div>
+  }
+  <ui-list-item
+    [item]="displayValue"
+    [withArrow]="true"
+    [last]=true
+    (itemClick)="openModal()"
+    [style.width]="'100%'"
+  ></ui-list-item>
+</div>

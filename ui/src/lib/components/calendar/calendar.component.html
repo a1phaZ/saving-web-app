@@ -1,0 +1,13 @@
+<div class="calendar__wrapper">
+  <div class="date__wrapper">
+    <div class="day">{{ currentDay }}</div>
+    <div>{{ 'month.' + monthName | transloco }}</div>
+    <div class="year">{{year}}</div>
+  </div>
+  <div class="calendar">
+    @for(day of calendar; track $index) {
+      <div class="calendar__day" [ngClass]="{active: day===currentDay}" (click)="onDayClick(day)">{{day}}</div>
+    }
+  </div>
+
+</div>

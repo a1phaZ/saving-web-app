@@ -1,4 +1,4 @@
-<div class="modal {{ options?.size }}">
+<div class="modal" *ngIf="active" @dialog>
   <div class="modal-header">
     {{ options?.title }}
     <span class="modal-close" (click)="close()">✕</span>
@@ -7,8 +7,8 @@
     <ng-content></ng-content>
   </div>
   <div class="modal-footer" *ngIf="options?.submitButton">
-    <button (click)="submit()">{{ options?.submitButtonLabel }}</button>
+    <button (click)="submit('')">{{ options?.submitButtonLabel }}</button>
   </div>
 </div>
 
-<div class="modal-backdrop" (click)="close()"></div>
+<div class="modal-backdrop" *ngIf="active" (click)="close()"></div>

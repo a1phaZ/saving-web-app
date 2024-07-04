@@ -38,18 +38,24 @@ export class ModalService {
     modalComponent.instance.options = options;
     modalComponent.instance.closeEvent.subscribe(() => {
       this.closeModal();
+      modalComponent.instance.closeEvent.unsubscribe();
+      innerComponent.destroy();
+      modalComponent.destroy();
     });
-    modalComponent.instance.submitEvent.subscribe(() => {
-      this.submitModal();
+    modalComponent.instance.submitEvent.subscribe((value) => {
+      this.submitModal(value);
+      modalComponent.instance.submitEvent.unsubscribe();
+      innerComponent.destroy();
+      modalComponent.destroy();
     });
 
     // @ts-ignore
     innerComponent.instance.data = options?.data;
     // @ts-ignore
-    innerComponent.instance.itemClick.subscribe((id: string) => {
-      this.submitModal(id);
-      innerComponent.destroy();
-      modalComponent.destroy();
+    innerComponent.instance.valueChange.subscribe((value: string) => {
+      modalComponent.instance.submit(value);
+      // @ts-ignore
+      innerComponent.instance.valueChange.unsubscribe();
     });
 
     modalComponent.hostView.detectChanges();

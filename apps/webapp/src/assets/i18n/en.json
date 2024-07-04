@@ -20,9 +20,9 @@
           "label": "Period",
           "placeholder": "Input Period Here"
         },
-        "paid-date": {
-          "label": "Pay Day",
-          "placeholder": "Input Pay Day Here"
+        "payday": {
+          "label": "Payday",
+          "placeholder": "Input Payday Here"
         }
       }
     },
@@ -46,5 +46,8 @@
     "monthly": "Monthly",
     "yearly": "Yearly",
     "custom": "Custom"
+  },
+  "month": {
+    "July": "July"
   }
 }

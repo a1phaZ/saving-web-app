@@ -13,9 +13,9 @@ import { TListItem } from '../../../types';
 export class SelectFieldValuesListComponent {
   @Input() data: TListItem[] = [];
 
-  @Output() itemClick: EventEmitter<string> = new EventEmitter<string>();
+  @Output() valueChange: EventEmitter<string> = new EventEmitter<string>();
 
   public onItemClick(item: TListItem): void {
-    this.itemClick.emit(item.id);
+    this.valueChange.emit(item.id);
   }
 }

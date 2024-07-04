@@ -7,6 +7,7 @@ import {
 } from '@tg-web-app/ui';
 import { FormControl } from '@angular/forms';
 import { EPeriods } from '../../config/periods.config';
+import { CalendarFormControl } from '@tg-web-app/ui';
 
 export class BillAddForm extends BaseForm {
   constructor(private readonly periods: TListItem[]) {
@@ -41,11 +42,10 @@ export class BillAddForm extends BaseForm {
           values: this.periods,
         },
       }),
-      PaidDate: new TextFormControl({
+      PayDay: new CalendarFormControl({
         options: {
-          placeholder: 'bill.add.form.paid-date.placeholder',
-          label: 'bill.add.form.paid-date.label',
-          type: EFieldTypes.NUMBER,
+          label: 'bill.add.form.payday.label',
+          type: EFieldTypes.CALENDAR,
         },
       }),
     };
